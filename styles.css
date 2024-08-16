@@ -183,10 +183,6 @@ button:hover {
 
 /* Responsive Styles */
 @media (max-width: 767px) {
-    body {
-        backround-color: var(--primary-color);
-    }
-    
     .container {
         width: 300px;
     }
