@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap');
+
+:root {
+    --background: #EDEDED;
+    --primary-color: #F9F9F9;
+    --secondary-color: #EEEEEE;
+    --accent-color: #000000;
+    --btn-hover: #F9F9F9;
+    --text-color: #1C1D20;
+ }
+
+ body {
+    font-family: "Lato", sans-serif;
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    color: var(--text-color);
+    min-height: 100vh; 
+}
+
+.container {
+    width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+.header-container h1 {
+    margin-right: 5px; 
+}
+
+h1, h2 {
+    text-align: center; 
+}
+
+#about {
+    display: none; 
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border: 1px solid #ccc;
+    color: var(--text-color);
+    border-radius: 5px;
+    align-items: justify;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px;
+}
+
+.show-btn, .hide-btn {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--background);
+    border: none;
+    cursor: pointer;
+    max-width: 200px;
+    width: auto;
+    transition: 0.2s ease;
+}
+
+.show-btn:hover, .hide-btn:hover {
+    background-color: var(--btn-hover);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.input-section, .summary-section, .transaction-section, .transaction-list-section {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.summary-section {
+    text-align: center;
+    align-items: center;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#expenseChart {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    display:flex;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+input, select, button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 97%;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid #ccc;
+}
+
+button {
+    width: auto;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--btn-hover);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.transaction-list-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.transaction-list-section li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--secondary-color);
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.transaction-list-section li button {
+    background: #DA0037;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.transaction-list-section li button:hover {
+    background: #860122;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.transaction-list-section li button.edit {
+    background: #0E8388;
+    margin-left: 7rem;
+}
+
+.transaction-list-section li button.edit:hover {
+    background: #074244;
+    margin-left: 7rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .container {
+        width: 300px;
+    }
+
+    label {
+        width: 100%;
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    input, select, button {
+        width: 95%;
+        margin-top: 5px;
+    }
+
+    .transaction-list-section li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--secondary-color);
+        margin-bottom: 5px;
+    }
+
+    .transaction-list-section ul {
+        list-style: none;
+        padding: 0;
+        margin-right: 0;
+        font-size: 14px;
+    }
+
+    .transaction-list-section li button {
+        background: #DA0037;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        margin-left: 5px;
+        font-size: 12px;
+        padding: 5px;
+        width: 35%;
+    }
+
+    .show-btn, .hide-btn {
+        padding: 10px 15px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        border: none;
+        cursor: pointer;
+        max-width: 200px;
+        width: auto;
+    }
+
+    button {
+        font-size: 14px;
+        width: auto;
+    }
+
+    .button-group {
+        flex-direction: row;
+        font-size: 14px;
+    }
+
+    #expenseChart {
+        max-width: 100%;
+        max-height: 200px;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetPro</title>
+    <link rel="icon" href="budgetpro.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>BudgetPro</h1>
+            <img src="budgetpro.png" alt="logo" height="50px" width="50px">
+        </div>        
+        <div class="button-group">
+            <button class="show-btn" onclick="showDescription()">Show Description</button>
+            <button class="hide-btn" onclick="hideDescription()">Hide Description</button>
+        </div>
+        <div id="about">
+            <p>BudgetPro is designed to help you manage your finances efficiently. Using the 50/30/20 rule, it allows you to allocate your monthly allowance into three categories: Needs (50%), Savings (30%), and Wants (20%). You can enter, edit, or delete transactions in these categories, and the app will automatically update your balance and notify you if you exceed the budget in any category. The app also provides a visual summary of your spending using charts, saves your data locally for later access, and allows you to print a detailed report, including the chart, for any specified month.</p>
+        </div>
+        <div class="input-section">
+            <label for="allowance" required>Monthly Allowance: </label>
+            <input type="number" id="allowance" placeholder="Enter your allowance" required />
+            <label for="allowanceDate">Allowance Date: </label>
+            <input type="month" id="allowanceDate" required />
+            <div class="button-group">
+                <button onclick="setAllowance()">Set Allowance</button>
+            </div>
+            <div></div>
+            <label for="viewDate">View Data for M and Y: </label>
+            <input type="month" id="viewDate">
+            <div class="button-group">
+                <button onclick="viewData()">View Data</button>
+                <button onclick="printData()">Print Data</button>
+            </div>
+        </div>
+        <div class="summary-section">
+            <h2>Summary</h2>
+            <canvas id="expenseChart"></canvas>
+            <div>Allowance for Month of: <span id="allowanceMonthYear"></span></div>
+            <div>Needs: <span id="needs">0</span></div>
+            <div>Savings: <span id="savings">0</span></div>
+            <div>Wants: <span id="wants">0</span></div>
+            <div>Balance: <span id="balance">0</span></div>
+            <div class="button-group">
+                <button onclick="saveData()">Save Data</button>
+                <button onclick="resetData()">Reset</button>
+            </div>
+        </div>
+        <div class="transaction-section">
+            <h2>Add Transaction</h2>
+            <label for="description">Description: </label>
+            <input type="text" id="description" placeholder="Enter description" required />
+            <label for="amount">Amount: </label>
+            <input type="number" id="amount" placeholder="Enter amount" required />
+            <label for="category">Select category: </label>
+            <select id="category">
+                <option value="needs">Needs</option>
+                <option value="savings">Savings</option>
+                <option value="wants">Wants</option>
+            </select>
+            <label for="date">Date: </label>
+            <input type="date" id="date" required />
+            <div class="button-group">
+                <button onclick="addTransaction()">Add Transaction</button>
+            </div>
+        </div>
+        <div class="transaction-list-section">
+            <h2>Transactions</h2>
+            <ul id="transaction-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
